@@ -157,7 +157,11 @@ function rTopics(b){
     </button>`).join("");
 
   // 주제 칩
-  const chipsHtml=topics.length>0?`<div class="chips">${topics.map(t=>`
+  const guideHtml=topics.length>0?`<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+    <div style="font-size:13px;font-weight:600;color:#4f46e5">💡 관심 있는 강좌를 선택해주세요!</div>
+    <div style="font-size:12px;color:${sel.length>0?'#16a34a':'#9ca3af'};font-weight:${sel.length>0?'600':'400'}">${sel.length>0?sel.length+'개 선택됨':'0개 선택됨'}</div>
+  </div>`:"";
+  const chipsHtml=topics.length>0?`${guideHtml}<div class="chips" style="border:1.5px solid ${sel.length>0?'#c7d2fe':'#e5e7eb'};border-radius:12px;padding:12px;background:${sel.length>0?'#fafafe':'#fafafa'}">${topics.map(t=>`
     <div class="chip ${sel.includes(t)?'sel':''}" onclick="tTopic('${key}','${t.replace(/'/g,"&#39;")}')">${sel.includes(t)?'✓ ':''}${t}</div>`).join("")}</div>`
     :(isLife?"":`<div style="text-align:center;padding:20px;color:#9ca3af;font-size:13px">← 먼저 난이도를 선택해주세요</div>`);
 
@@ -170,6 +174,7 @@ function rTopics(b){
     <div class="qsub">${isLife?"취미·라이프 전체 목록 · 여러 개 선택 가능":"난이도를 먼저 선택하면 맞는 강의를 보여드려요"}</div>
     ${isLife?"":`<div id="lv-req" class="lv-req">⚠ 난이도를 먼저 선택해주세요!</div><div class="lv-wrap">${lvHtml}</div>`}
     ${chipsHtml}
+    <div id="topic-req" class="lv-req">⚠ 강좌를 1개 이상 선택해주세요!</div>
     <div class="brow">
       <button class="btn p" onclick="goNextTopic()">${st.topicIdx<st.selCats.length-1?"다음 분야 →":"다음 →"}</button>
     </div>`;
@@ -222,6 +227,13 @@ function goNextTopic(){
   // 취미 아닌데 난이도 선택 안 했으면 경고
   if(!isLife && !st.activeLv[key]){
     const el=document.getElementById("lv-req");
+    if(el)el.classList.add("show");
+    return;
+  }
+  // 강좌 1개 이상 선택 필수
+  const sel=st.topics[key]||[];
+  if(sel.length===0){
+    const el=document.getElementById("topic-req");
     if(el)el.classList.add("show");
     return;
   }
