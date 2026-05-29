@@ -6,269 +6,28 @@
 <title>경기온라인학교 콘텐츠 수요 설문</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Noto Sans KR',sans-serif;background:#f3f4f6;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:24px 16px}
-.logo{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:6px 16px;margin-bottom:20px}
+body{font-family:'Noto Sans KR',sans-serif;background:#f3f4f6;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 16px}
+.logo{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:6px 16px;margin-bottom:24px}
 .logo-text{font-weight:600;font-size:14px;color:#111827}
-.card{background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08);overflow:hidden;width:100%;max-width:520px}
-.pbar{height:3px;background:#f3f4f6}
-.pfill{height:100%;background:#6366f1;transition:width .4s}
-.body{padding:24px}
-.tnav{display:flex;align-items:center;gap:8px;margin-bottom:18px;flex-wrap:wrap}
-.bbtn{display:inline-flex;align-items:center;gap:4px;padding:5px 12px;border-radius:999px;font-size:12px;border:1px solid #e5e7eb;background:#fff;color:#6b7280;cursor:pointer}
-.bbtn:hover{background:#f9fafb}
-.hbadge{padding:4px 12px;border-radius:999px;font-size:12px;background:#eef2ff;color:#4f46e5;font-weight:600;border:1px solid #c7d2fe}
-.qtitle{font-size:18px;font-weight:700;color:#111827;margin-bottom:4px;line-height:1.4}
-.qsub{font-size:13px;color:#6b7280;margin-bottom:18px;line-height:1.5}
-.citem{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;border:1.5px solid #e5e7eb;cursor:pointer;margin-bottom:8px;transition:all .15s}
-.citem:hover{border-color:#c7d2fe}
-.citem.sel{border-color:#6366f1;background:#eef2ff}
-.cion{width:36px;height:36px;border-radius:8px;background:#f3f4f6;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
-.citem.sel .cion{background:#e0e7ff}
-.cname{font-weight:600;font-size:14px;color:#111827}
-.citem.sel .cname{color:#4f46e5}
-.cdesc{font-size:12px;color:#9ca3af;margin-top:2px}
-.chk{width:20px;height:20px;border-radius:50%;background:#6366f1;display:flex;align-items:center;justify-content:center;margin-left:auto;flex-shrink:0;opacity:0;transition:opacity .15s;color:#fff;font-size:11px;font-weight:700}
-.citem.sel .chk{opacity:1}
-/* 난이도 선택 카드 */
-.lv-wrap{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
-.lvbtn{display:flex;align-items:center;gap:12px;padding:13px 16px;border-radius:12px;border:1.5px solid #e5e7eb;background:#fff;cursor:pointer;transition:all .15s;text-align:left}
-.lvbtn:hover{border-color:#c7d2fe}
-.lvbtn.sel-g{border-color:#22c55e;background:#f0fdf4}
-.lvbtn.sel-b{border-color:#6366f1;background:#eef2ff}
-.lvbtn.sel-a{border-color:#f97316;background:#fff7ed}
-.lv-emoji{font-size:22px;flex-shrink:0}
-.lv-name{font-weight:700;font-size:14px;color:#111827}
-.lv-desc{font-size:12px;color:#6b7280;margin-top:2px}
-.lvbtn.sel-g .lv-name{color:#16a34a}
-.lvbtn.sel-b .lv-name{color:#4f46e5}
-.lvbtn.sel-a .lv-name{color:#ea580c}
-.lv-req{font-size:12px;color:#ef4444;margin-bottom:12px;display:none}
-.lv-req.show{display:block}
-/* 주제 칩 */
-.chips{display:flex;flex-wrap:wrap;gap:7px;max-height:290px;overflow-y:auto;padding-right:2px;margin-bottom:18px}
-.chip{padding:6px 12px;border-radius:999px;font-size:13px;border:1.5px solid #e5e7eb;background:#fff;color:#374151;cursor:pointer;transition:all .15s;line-height:1.4}
-.chip:hover{border-color:#c7d2fe}
-.chip.sel{border-color:#6366f1;background:#eef2ff;color:#4f46e5;font-weight:600}
-/* 학교급 */
-.gitem{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;border-radius:12px;border:1.5px solid #e5e7eb;cursor:pointer;margin-bottom:8px;font-size:14px;color:#374151;transition:all .15s}
-.gitem:hover{border-color:#c7d2fe}
-.gitem.sel{border-color:#6366f1;background:#eef2ff;color:#4f46e5;font-weight:600}
-/* 버튼 */
-.brow{display:flex;gap:8px;margin-top:6px}
-.btn{flex:1;padding:12px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s;border:1.5px solid #e5e7eb;background:#fff;color:#374151}
-.btn:hover{background:#f9fafb}
-.btn.p{flex:2;background:#6366f1;border-color:#6366f1;color:#fff}
-.btn.p:hover{background:#4f46e5}
-.btn:disabled{opacity:.4;cursor:not-allowed}
-.err{color:#ef4444;font-size:12px;margin-top:8px}
-.dsum{margin-top:16px;padding:12px 14px;background:#f9fafb;border-radius:12px;font-size:12px;color:#6b7280;text-align:left;line-height:1.9}
-.dsum b{color:#374151;font-weight:600}
+.card{background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08);width:100%;max-width:480px;padding:48px 32px;text-align:center}
+.icon{font-size:56px;margin-bottom:20px}
+.title{font-size:22px;font-weight:700;color:#111827;margin-bottom:12px;line-height:1.4}
+.desc{font-size:14px;color:#6b7280;line-height:1.8}
+.divider{border:none;border-top:1px solid #f3f4f6;margin:24px 0}
+.thanks{font-size:13px;color:#9ca3af}
 </style>
 </head>
 <body>
 <div class="logo"><span style="font-size:16px">🎓</span><span class="logo-text">경기온라인학교</span></div>
 <div class="card">
-  <div class="pbar"><div class="pfill" id="pf" style="width:5%"></div></div>
-  <div class="body" id="bd"></div>
+  <div class="icon">📋</div>
+  <div class="title">설문이 종료되었습니다</div>
+  <div class="desc">
+    콘텐츠 강의 선호도 조사에<br>참여해주셔서 감사합니다.<br><br>
+    응답해주신 내용을 바탕으로<br>더 좋은 강의를 준비하겠습니다.
+  </div>
+  <div class="divider"></div>
+  <div class="thanks">경기온라인학교 드림 🙏</div>
 </div>
-<p style="margin-top:12px;font-size:11px;color:#9ca3af;text-align:center">응답 내용은 강의 개설에만 활용됩니다</p>
-
-<script>
-const URL_="https://script.google.com/macros/s/AKfycbwiCfjGl3_SZIZmbDbJFZd9rZue2cOL15KElBEtXjX3foYevtsirG7KLj6QlwyZrvwlVg/exec";
-
-// ── 강좌 데이터 ─────────────────────────────────────────
-  var coding_begin=["스크래치로 배우는 코딩 자격증 (CDT)","엔트리로 배우는 코딩 자격증 (CDT)","제페토 크리에이터 — 메타버스 입문","제페토로 나만의 메타버스 월드 만들기","3D 코딩 게임 만들기 (KODU)","스크래치 블록 코딩 입문","엔트리 블록 코딩 입문","AI와 인간 — 철학적 탐구"];
-  var coding_mid=["AI로 데이터베이스 연동 앱 만들기","AI로 할 일 관리 앱 만들기","AI로 게시판 웹사이트 만들기","AI 활용 자격증 (AI-POT)","스크래치로 배우는 코딩 자격증 (CDT)","엔트리로 배우는 코딩 자격증 (CDT)","제페토 크리에이터 — 메타버스 입문","제페토로 나만의 메타버스 월드 만들기","3D 코딩 게임 만들기 (KODU)","스크래치 블록 코딩 입문","엔트리 블록 코딩 입문","앱·웹 서버 개발 (코틀린·스프링)","AI와 인간 — 철학적 탐구","아두이노로 전자 기기 만들기","AI로 반복 업무 자동화하기","웹 서버 만들기 (스프링부트)","AI 바이브코딩 — 코딩 몰라도 앱 만들기","AI로 이미지·그림 생성하기"];
-  var coding_adv=["AI로 데이터베이스 연동 앱 만들기","AI로 할 일 관리 앱 만들기","AI로 게시판 웹사이트 만들기","AI 활용 자격증 (AI-POT)","AI 자격증 AICE — 데이터 분석·AI 모델링","AI 자격증 AICE — AI 기초 원리","AI 자격증 AICE — 컴퓨팅 사고력","앱·웹 서버 개발 (코틀린·스프링)","아두이노로 전자 기기 만들기","AI 트렌드와 미래 직업 탐색","AI 모델 직접 만들어보기","데이터베이스 기초 — SQL 입문","AI로 반복 업무 자동화하기","웹 서버 만들기 (스프링부트)","AI 바이브코딩 — 코딩 몰라도 앱 만들기","AI로 이미지·그림 생성하기"];
-  var art_begin=["유튜브 쇼츠 제작 입문","AI로 나만의 음악 만들기","AI 보이스·더빙으로 영상 만들기","스컬프쳐 페인팅 (입체 회화)","오일파스텔 드로잉","뮤지컬 배우에게 배우는 보컬 트레이닝","노래 잘하는 법 — 보컬 입문","바이올린 입문 — 가요·OST로 배우기","드럼 입문","베이스기타 입문","예쁜 손글씨 쓰기","수묵 일러스트레이션","캘리그라피 입문","디지털 드로잉 — 나만의 캐릭터 만들기","AI로 인물 사진 찍기·편집","웹툰 스토리텔링과 연출","캐릭터 인체 드로잉","여행 영상 촬영·편집","스마트폰으로 영상 잘 찍는 법"];
-  var art_mid=["유튜브 쇼츠 제작 입문","AI로 나만의 음악 만들기","AI 보이스·더빙으로 영상 만들기","스컬프쳐 페인팅 (입체 회화)","오일파스텔 드로잉","AI+일러스트레이터로 벡터 디자인","AI 이미지로 일러스트 디자인","AI 캐릭터·로고 디자인 (일러스트레이터)","AI 포토샵 디자인 입문","생성형 AI+포토샵 실전 디자인","AI 포토샵 — 이미지 생성·편집 풀코스","뮤지컬 배우에게 배우는 보컬 트레이닝","노래 잘하는 법 — 보컬 입문","바이올린 입문 — 가요·OST로 배우기","드럼 입문","베이스기타 입문","예쁜 손글씨 쓰기","수묵 일러스트레이션","캘리그라피 입문","디지털 드로잉 — 나만의 캐릭터 만들기","인포그래픽 디자인 입문","AI로 인물 사진 찍기·편집","3D 프린터 모델링 입문","웹툰 스토리텔링과 연출","캐릭터 인체 드로잉","여행 영상 촬영·편집","그래픽 디자인 기초","블렌더 3D 모델링 입문","주얼리 디자인 (캐드 활용)","건축·공간 디자인 기초","스마트폰으로 영상 잘 찍는 법"];
-  var art_adv=["AI+일러스트레이터로 벡터 디자인","AI 이미지로 일러스트 디자인","AI 캐릭터·로고 디자인 (일러스트레이터)","AI 포토샵 디자인 입문","생성형 AI+포토샵 실전 디자인","AI 포토샵 — 이미지 생성·편집 풀코스","애프터이펙트 영상편집 입문","인포그래픽 디자인 입문","3D 프린터 모델링 입문","그래픽 디자인 기초","블렌더 3D 모델링 입문","주얼리 디자인 (캐드 활용)","건축·공간 디자인 기초"];
-  var lang_begin=["스페인어 회화 기초","여행 스페인어","여행 영어 — 패턴으로 말하기","여행 일본어 입문","일본어 회화 첫걸음","여행 일본어 — 패턴으로 말하기","대만 여행 중국어","영어 회화 핵심 패턴 — 입문","일본어 회화 핵심 패턴 — 초급","중국어 어법 정복","중국어 발음 교정","중국어 회화 — 기초반"];
-  var lang_mid=["스페인어 회화 기초","여행 스페인어","여행 영어 — 패턴으로 말하기","여행 일본어 입문","일본어 회화 첫걸음","여행 일본어 — 패턴으로 말하기","대만 여행 중국어","영어 시험 문법 마스터","영어 회화 핵심 패턴 — 고급","영어 회화 핵심 패턴 — 입문","JLPT N2 합격 과정","JLPT N3 독해","JLPT N3 문법","일본어 회화 핵심 패턴 — 초급","HSK 3급 단기 완성","HSK 3급 문제풀이","HSK 3급 실전 모의고사","중국어 어법 정복","중국어 발음 교정","중국어 회화 — 기초반"];
-  var lang_adv=["영어 시험 문법 마스터","영어 회화 핵심 패턴 — 고급","오픽 AL 등급 공략","오픽 IH 등급 공략","JLPT N2 합격 과정","JLPT N3 독해","JLPT N3 문법","HSK 3급 단기 완성","HSK 3급 문제풀이","HSK 3급 실전 모의고사","토익 600점대 리스닝 공략","토익 600점대 리딩 공략","토익 800점대 리스닝 공략","아이엘츠(IELTS) 스피킹","토익 입문 — 리딩","토익 입문 — 리스닝"];
-  var cert_begin=["Google Docs 기초 활용","Gmail 기초 활용","Google 스프레드시트 기초","엑셀 기초 사용법","엑셀 실무 활용 팁","왕초보 엑셀 입문","워드 실무 활용 팁","파워포인트 디자인·모션 영상","파워포인트 실무 활용 팁","발표 잘 되는 PPT 디자인","한글 프로그램 실무 팁","한자능력검정시험","엑셀 중급 활용"];
-  var cert_mid=["DIAT 스프레드시트 (엑셀)","DIAT 워드프로세서 (한글)","DIAT 인터넷 정보검색","Google Docs 기초 활용","Gmail 기초 활용","Google 스프레드시트 기초","ITQ Access 자격증","ITQ 엑셀 자격증","ITQ 파워포인트 자격증","KBS 한국어능력시험","MOS 엑셀 자격증","MOS 파워포인트 자격증","MOS 워드 자격증","엑셀 기초 사용법","엑셀 실무 활용 팁","왕초보 엑셀 입문","워드 실무 활용 팁","파워포인트 디자인·모션 영상","파워포인트 실무 활용 팁","발표 잘 되는 PPT 디자인","한글 프로그램 실무 팁","드론 조종사 자격증 — 이론","드론 조종사 자격증 — 기출 문제풀이","워드프로세서 자격증","한국사능력검정시험 심화","한국사능력검정시험 기초","한국실용글쓰기 자격증","한자능력검정시험","엑셀 중급 활용","대학 입시·지원 절차 가이드","디지털 마케팅 입문","SNS 마케팅 실전"];
-  var cert_adv=["DIAT 스프레드시트 (엑셀)","DIAT 워드프로세서 (한글)","DIAT 인터넷 정보검색","ITQ Access 자격증","ITQ 엑셀 자격증","ITQ 파워포인트 자격증","KBS 한국어능력시험","MOS 엑셀 자격증","MOS 파워포인트 자격증","MOS 워드 자격증","드론 조종사 자격증 — 이론","드론 조종사 자격증 — 기출 문제풀이","메이크업 국가자격증 실기","메이크업 국가자격증 필기","네일 미용사 자격증","메이크업 미용사 자격증","일반 미용사 자격증","워드프로세서 자격증","양식 조리기능사 실기","양식 조리기능사 필기","제과기능사 실기","컴활 1급 실기","컴활 1급 필기","컴활 2급 실기","한국사능력검정시험 심화","한국사능력검정시험 기초","한국실용글쓰기 자격증","대학 입시·지원 절차 가이드","디지털 마케팅 입문","SNS 마케팅 실전"];
-  var life_all=["커스텀 주얼리 만들기","비즈공예 액세서리","고급 종이접기 (페이퍼빌드)","명상 힐링 — 싱잉볼","셀프 뷰티 스타일링","나에게 맞는 퍼스널 컬러 찾기","요가 입문","일상 속 과학 이야기","홈 필라테스","그림으로 배우는 심리학","명상으로 마음 리셋","유튜브·스피치 스킬업","영국식 티타임·홍차 클래스","일상 자세 교정·스트레칭","뜨개질 — 귀여운 모자 만들기","아이싱 쿠키 만들기","자수 입문","뜨개질 입문","전통차 만들기","쿠키 만들기·공예","제철 채소 요리","한식 요리 클래스"];
-
-const T={
-  coding:{begin:coding_begin,mid:coding_mid,adv:coding_adv},
-  art:   {begin:art_begin,mid:art_mid,adv:art_adv},
-  lang:  {begin:lang_begin,mid:lang_mid,adv:lang_adv},
-  cert:  {begin:cert_begin,mid:cert_mid,adv:cert_adv},
-  life:  {all:life_all},
-};
-
-const CATS=[
-  {key:"coding",icon:"💻",label:"코딩·AI",desc:"코딩, 인공지능, 앱개발"},
-  {key:"art",   icon:"🎨",label:"아트·영상·음악",desc:"그림, 영상편집, 악기, 사진"},
-  {key:"lang",  icon:"🌍",label:"외국어",desc:"영어, 일본어, 중국어 등"},
-  {key:"cert",  icon:"📋",label:"자격증·스펙",desc:"컴활, ITQ, 한국사 등"},
-  {key:"life",  icon:"🍳",label:"취미·라이프",desc:"요리, 운동, 공예, 뷰티 등"},
-];
-const LVS=[
-  {key:"begin",emoji:"🟢",name:"입문",desc:"처음 배워요",cls:"sel-g"},
-  {key:"mid",  emoji:"🟡",name:"초급·중급",desc:"조금 알아요",cls:"sel-b"},
-  {key:"adv",  emoji:"🔴",name:"고급·자격증",desc:"심화에 도전해요",cls:"sel-a"},
-];
-const GRADES=["중학교 1~2학년","중학교 3학년","고등학교 1학년","고등학교 2~3학년","기타"];
-
-const st={step:"category",selCats:[],topicIdx:0,topics:{},school:"",activeLv:{},submitting:false};
-function co(k){return CATS.find(c=>c.key===k);}
-function pp(){
-  if(st.step==="category") return 8;
-  if(st.step==="topics") return 15+(st.topicIdx/st.selCats.length)*72;
-  if(st.step==="school") return 90;
-  return 100;
-}
-function render(){
-  document.getElementById("pf").style.width=pp()+"%";
-  const b=document.getElementById("bd");b.innerHTML="";
-  if(st.step==="category") rCat(b);
-  else if(st.step==="topics") rTopics(b);
-  else if(st.step==="school") rSchool(b);
-  else rDone(b);
-}
-
-function rCat(b){
-  b.innerHTML=`<div class="qtitle">배우고 싶은 분야가 있나요?</div><div class="qsub">여러 개 선택할 수 있어요</div>`+
-  CATS.map(c=>`<div class="citem ${st.selCats.includes(c.key)?'sel':''}" onclick="tCat('${c.key}')">
-    <div class="cion">${c.icon}</div>
-    <div><div class="cname">${c.label}</div><div class="cdesc">${c.desc}</div></div>
-    <div class="chk">✓</div>
-  </div>`).join("")+
-  `<div class="brow"><button class="btn p" onclick="next()" ${st.selCats.length===0?'disabled':''}>다음 →</button></div>`;
-}
-
-function rTopics(b){
-  const key=st.selCats[st.topicIdx];
-  const cat=co(key);
-  const isLife=key==="life";
-  const curLv=st.activeLv[key]||"";
-  const topics=isLife?T.life.all:(curLv?T[key][curLv]:[]);
-  const sel=st.topics[key]||[];
-
-  // 난이도 버튼
-  const lvHtml=isLife?"":LVS.map(l=>`
-    <button class="lvbtn ${curLv===l.key?l.cls:''}" onclick="sLv('${key}','${l.key}')">
-      <span class="lv-emoji">${l.emoji}</span>
-      <div><div class="lv-name">${l.name}</div><div class="lv-desc">${l.desc}</div></div>
-      ${curLv===l.key?'<span style="margin-left:auto;font-weight:700;font-size:16px">✓</span>':''}
-    </button>`).join("");
-
-  // 주제 칩
-  const guideHtml=topics.length>0?`<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-    <div style="font-size:13px;font-weight:600;color:#4f46e5">💡 관심 있는 강좌를 선택해주세요!</div>
-    <div style="font-size:12px;color:${sel.length>0?'#16a34a':'#9ca3af'};font-weight:${sel.length>0?'600':'400'}">${sel.length>0?sel.length+'개 선택됨':'0개 선택됨'}</div>
-  </div>`:"";
-  const chipsHtml=topics.length>0?`${guideHtml}<div class="chips" style="border:1.5px solid ${sel.length>0?'#c7d2fe':'#e5e7eb'};border-radius:12px;padding:12px;background:${sel.length>0?'#fafafe':'#fafafa'}">${topics.map(t=>`
-    <div class="chip ${sel.includes(t)?'sel':''}" onclick="tTopic('${key}','${t.replace(/'/g,"&#39;")}')">${sel.includes(t)?'✓ ':''}${t}</div>`).join("")}</div>`
-    :(isLife?"":`<div style="text-align:center;padding:20px;color:#9ca3af;font-size:13px">← 먼저 난이도를 선택해주세요</div>`);
-
-  b.innerHTML=`
-    <div class="tnav">
-      <button class="bbtn" onclick="back()">← ${st.topicIdx===0?"분야 선택으로":"이전 분야"}</button>
-      <span class="hbadge">${cat.icon} ${cat.label} · ${st.topicIdx+1}/${st.selCats.length}</span>
-    </div>
-    <div class="qtitle">관심 있는 주제를 골라주세요</div>
-    <div class="qsub">${isLife?"취미·라이프 전체 목록 · 여러 개 선택 가능":"난이도를 먼저 선택하면 맞는 강의를 보여드려요"}</div>
-    ${isLife?"":`<div id="lv-req" class="lv-req">⚠ 난이도를 먼저 선택해주세요!</div><div class="lv-wrap">${lvHtml}</div>`}
-    ${chipsHtml}
-    <div id="topic-req" class="lv-req">⚠ 강좌를 1개 이상 선택해주세요!</div>
-    <div class="brow">
-      <button class="btn p" onclick="goNextTopic()">${st.topicIdx<st.selCats.length-1?"다음 분야 →":"다음 →"}</button>
-    </div>`;
-}
-
-function rSchool(b){
-  b.innerHTML=`
-    <div class="tnav"><button class="bbtn" onclick="back()">← 주제 선택으로</button></div>
-    <div class="qtitle">마지막 질문이에요 🎉</div>
-    <div class="qsub">현재 학교급을 알려주세요</div>`+
-  GRADES.map(g=>`<div class="gitem ${st.school===g?'sel':''}" onclick="sGrade('${g}')">${g}${st.school===g?' ✓':''}</div>`).join("")+
-  `<div id="err" class="err"></div>
-  <div class="brow"><button class="btn p" id="sb" onclick="submit()" ${st.submitting?'disabled':''}>
-    ${st.submitting?'제출 중...':'✨ 설문 제출하기'}
-  </button></div>`;
-}
-
-function rDone(b){
-  const catL=st.selCats.map(k=>co(k).icon+" "+co(k).label).join(", ");
-  const tLines=Object.entries(st.topics).filter(([,v])=>v.length>0)
-    .map(([k,v])=>`<b>${co(k).icon} ${co(k).label}</b><br>${v.join(", ")}`).join("<br>");
-  const lvLines=Object.entries(st.activeLv).filter(([k])=>k!=="life")
-    .map(([k,lv])=>`${co(k).label}: ${LVS.find(l=>l.key===lv)?.name||lv}`).join(", ");
-  b.innerHTML=`<div style="text-align:center;padding:24px 0">
-    <div style="font-size:52px;margin-bottom:16px">🎉</div>
-    <div style="font-size:20px;font-weight:700;color:#111827;margin-bottom:8px">참여해주셔서 감사해요!</div>
-    <div style="font-size:13px;color:#6b7280;line-height:1.7">여러분의 선택이 경기온라인학교<br>강의 개설에 직접 반영됩니다.</div>
-    <div class="dsum">
-      <b>선택 분야</b><br>${catL}
-      ${lvLines?`<br><b>수준</b><br>${lvLines}`:""}
-      ${tLines?`<br><br>${tLines}`:""}
-      ${st.school?`<br><br><b>학교급</b><br>${st.school}`:""}
-    </div>
-  </div>`;
-}
-
-function tCat(k){const i=st.selCats.indexOf(k);if(i>-1)st.selCats.splice(i,1);else st.selCats.push(k);render();}
-function tTopic(k,t){if(!st.topics[k])st.topics[k]=[];const i=st.topics[k].indexOf(t);if(i>-1)st.topics[k].splice(i,1);else st.topics[k].push(t);render();}
-function sLv(k,lv){st.activeLv[k]=lv;render();}
-function sGrade(g){st.school=st.school===g?"":g;render();}
-
-function next(){
-  if(st.step==="category"){if(st.selCats.length===0)return;st.topicIdx=0;st.step="topics";}
-  render();
-}
-
-function goNextTopic(){
-  const key=st.selCats[st.topicIdx];
-  const isLife=key==="life";
-  // 취미 아닌데 난이도 선택 안 했으면 경고
-  if(!isLife && !st.activeLv[key]){
-    const el=document.getElementById("lv-req");
-    if(el)el.classList.add("show");
-    return;
-  }
-  // 강좌 1개 이상 선택 필수
-  const sel=st.topics[key]||[];
-  if(sel.length===0){
-    const el=document.getElementById("topic-req");
-    if(el)el.classList.add("show");
-    return;
-  }
-  if(st.topicIdx<st.selCats.length-1) st.topicIdx++;
-  else st.step="school";
-  render();
-}
-
-function back(){
-  if(st.step==="topics"){if(st.topicIdx===0)st.step="category";else st.topicIdx--;}
-  else if(st.step==="school"){st.topicIdx=st.selCats.length-1;st.step="topics";}
-  render();
-}
-
-async function submit(){
-  st.submitting=true;render();
-  const lvSum=Object.entries(st.activeLv).map(([k,lv])=>`[${co(k).label}] ${LVS.find(l=>l.key===lv)?.name||lv}`).join(", ");
-  const payload={
-    timestamp:new Date().toLocaleString("ko-KR"),
-    categories:st.selCats.map(k=>co(k).label).join(", "),
-    topics:Object.entries(st.topics).map(([k,v])=>`[${co(k).label}] ${v.join(" / ")}`).join("\n"),
-    level:lvSum||"취미만선택",
-    school:st.school||"미응답",
-  };
-  try{
-    await fetch(URL_,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
-    st.step="done";
-  }catch(e){
-    st.submitting=false;render();
-    const el=document.getElementById("err");if(el)el.textContent="제출 중 오류가 발생했습니다. 다시 시도해주세요.";return;
-  }
-  render();
-}
-
-render();
-</script>
 </body>
 </html>
